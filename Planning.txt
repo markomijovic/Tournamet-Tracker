@@ -1,0 +1,33 @@
+Structure: Windows form application and class library
+
+Data: SQL and/or text file
+
+Users: One at a time on one application
+
+Key Concepts: usage of email, sql, custom events, error handling, interfaces, random ordering, texting
+
+Data Design: 
+
+-Team: TeamMembers(List<Person>), TeamName(string)
+
+-Person: FirstName(string), LastName(string), Email (string), CellphoneNumber(string)
+
+-Tournament: TournamentName (string), EntryFee(decimal), EnteredTeams(List<Teams>), Rounds(List<List<Matchup>>) {1 row = 1 round}, PrizeModel
+
+-Prize: PlaceNumber(int), PlaceName(string), PrizeAmount(decimal), PrizePercentage(double)
+
+-Matchup: Entries(List<MatchupEntry>), Winner(Team, MatchupRound(int)
+
+-MatchupEntry: TeamCompeting(Team), Score(double), ParentMatchup(Matchup)
+
+UI: 
+
+- Seperate ui for tournament scoring and tournament creation
+
+- Create team: name, add new/existing person as a member {first name, last name, email, cellphone} properties entered here
+
+- Create prize: place #, place name, prize amount or %
+
+- Tournament Dashboard: main form that === the program (when closed it shuts down the program). Can load existing tournament or create a new one
+
+

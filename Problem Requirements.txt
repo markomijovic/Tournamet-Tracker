@@ -1,0 +1,24 @@
+Basic Req.:
+1) Tracks games played and winner/loser
+2) Multiple teams
+3) Create game order
+4) Schedule game
+5) Single elimination format
+6) The winner is the last team that does not lose
+
+Q:
+1) How many players in total and in a team. Is it constant or variable : Variable
+2) If a tournament has less than the complete number of teams/players > how to handle? : Implement a bye system where people who get a bye are selected at random
+3) Should the game order be random or not? : Random
+4) Should we schedule the game or just play whenever? : Play whenever the players want to
+5) When to schedule the games for? : Not scheduled.
+6) Do we have to play all 1st round first then 2nd, or can they be played independetly? : No each round must be finished before going to the next roudn
+7) Do we store the score or just the winner/loser? : Yes score for players/teams
+8) What type of front-end do we use? : Desktop system as a proof of concept, but an app/website down the road
+9) Where will the data be stored? : SQL or optionally to a text file
+10) Will there be entry fees, prizes etc. : Should have the option to charge entry fee, and an option for prizes where the administrator chooses the amount. Prize <= entry fees
+11) How do we report the results? : Simple report that shows the outcome, and a report that shows who won and by how much. Can be just displayed or emailed to people
+12) Who can enter the game results? : Anyone using the app can fill the results
+13) What levels of access are in place? : No. Players are not allowed into the app and do everything by email.
+14) Do we contact people about upcoming games? : Email users that are due to play and whom they need to schedule a game with
+15) Does the tracker handle individual vs team tournaments? : Tracker should handle the addition of other members. All members to be treated equally. Teams should be able to name their team.

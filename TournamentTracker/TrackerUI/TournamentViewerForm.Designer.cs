@@ -82,7 +82,7 @@
             // 
             this.roundDropdown.ForeColor = System.Drawing.SystemColors.MenuText;
             this.roundDropdown.FormattingEnabled = true;
-            this.roundDropdown.Location = new System.Drawing.Point(208, 162);
+            this.roundDropdown.Location = new System.Drawing.Point(179, 162);
             this.roundDropdown.Name = "roundDropdown";
             this.roundDropdown.Size = new System.Drawing.Size(219, 45);
             this.roundDropdown.TabIndex = 3;
@@ -92,7 +92,7 @@
             this.unplayedOnlyCheckbox.AutoSize = true;
             this.unplayedOnlyCheckbox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.unplayedOnlyCheckbox.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.unplayedOnlyCheckbox.Location = new System.Drawing.Point(208, 213);
+            this.unplayedOnlyCheckbox.Location = new System.Drawing.Point(179, 222);
             this.unplayedOnlyCheckbox.Name = "unplayedOnlyCheckbox";
             this.unplayedOnlyCheckbox.Size = new System.Drawing.Size(218, 42);
             this.unplayedOnlyCheckbox.TabIndex = 4;
