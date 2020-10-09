@@ -1,28 +1,45 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Text;
 
 namespace TrackerLibrary
 {
+    /// <summary>
+    /// A global variable that stores
+    /// data connections
+    /// </summary>
     public static class GlobalConfig
     {
-        public static List<IDataConnection> Connections { get; private set; } = new List<IDataConnection>();
+        public static IDataConnection Connection { get; private set; }
 
-        public static void InitializeConnections(bool database, bool textFiles)
+        public static void InitializeConnections(DatabaseType db)
         {
-            if (database)
+            switch (db)
             {
-                // TODO - create actualy .sql connection
-                SqlConnection sql = new SqlConnection();
-                Connections.Add(sql);
-            }
+                case DatabaseType.sql:
+                    SqlConnector sql = new SqlConnector();
+                    Connection = sql;
+                    break;
+                case DatabaseType.txt:
+                    // TODO - create .txt connection
+                    TextConnector txt = new TextConnector();
+                    Connection = txt;
+                    break;
+                default:
+                    break;
+            } 
+        }
 
-            if (textFiles)
-            {
-                // TODO - create .txt connection
-                TextConnection txt = new TextConnection();
-                Connections.Add(txt);
-            }
+        /// <summary>
+        /// Obtains the connection string value
+        /// from App.config
+        /// </summary>
+        /// <param name="name">The connection string name id</param>
+        /// <returns></returns>
+        public static string CncString(string name)
+        {
+            return ConfigurationManager.ConnectionStrings[name].ConnectionString;
         }
     }
 }

@@ -15,3 +15,15 @@ C:\Users\Marko\Desktop\CS\tournament\TournamentTracker\TrackerUI\obj\Debug\Track
 C:\Users\Marko\Desktop\CS\tournament\TournamentTracker\TrackerUI\bin\Debug\TrackerLibrary.dll
 C:\Users\Marko\Desktop\CS\tournament\TournamentTracker\TrackerUI\bin\Debug\TrackerLibrary.pdb
 C:\Users\Marko\Desktop\CS\tournament\TournamentTracker\TrackerUI\obj\Debug\TrackerUI.csproj.CopyComplete
+C:\Users\Marko\Desktop\CS\tournament\TournamentTracker\TrackerUI\bin\Debug\System.Data.SqlClient.dll
+C:\Users\Marko\Desktop\CS\tournament\TournamentTracker\TrackerUI\bin\Debug\System.Data.SqlClient.xml
+C:\Users\Marko\Desktop\CS\tournament\TournamentTracker\TrackerUI\bin\Debug\Dapper.dll
+C:\Users\Marko\Desktop\CS\tournament\TournamentTracker\TrackerUI\bin\Debug\Dapper.xml
+C:\Users\Marko\Desktop\CS\tournament\TournamentTracker\TrackerUI\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\Marko\Desktop\CS\tournament\TournamentTracker\TrackerUI\bin\Debug\System.Security.AccessControl.dll
+C:\Users\Marko\Desktop\CS\tournament\TournamentTracker\TrackerUI\bin\Debug\System.Security.Permissions.dll
+C:\Users\Marko\Desktop\CS\tournament\TournamentTracker\TrackerUI\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\Marko\Desktop\CS\tournament\TournamentTracker\TrackerUI\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\Marko\Desktop\CS\tournament\TournamentTracker\TrackerUI\bin\Debug\System.Security.AccessControl.xml
+C:\Users\Marko\Desktop\CS\tournament\TournamentTracker\TrackerUI\bin\Debug\System.Security.Permissions.xml
+C:\Users\Marko\Desktop\CS\tournament\TournamentTracker\TrackerUI\bin\Debug\System.Security.Principal.Windows.xml

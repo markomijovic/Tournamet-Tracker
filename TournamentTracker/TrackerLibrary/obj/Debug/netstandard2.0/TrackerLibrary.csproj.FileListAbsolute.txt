@@ -4,6 +4,6 @@ C:\Users\Marko\Desktop\CS\tournament\TournamentTracker\TrackerLibrary\bin\Debug\
 C:\Users\Marko\Desktop\CS\tournament\TournamentTracker\TrackerLibrary\obj\Debug\netstandard2.0\TrackerLibrary.csprojAssemblyReference.cache
 C:\Users\Marko\Desktop\CS\tournament\TournamentTracker\TrackerLibrary\obj\Debug\netstandard2.0\TrackerLibrary.AssemblyInfoInputs.cache
 C:\Users\Marko\Desktop\CS\tournament\TournamentTracker\TrackerLibrary\obj\Debug\netstandard2.0\TrackerLibrary.AssemblyInfo.cs
-C:\Users\Marko\Desktop\CS\tournament\TournamentTracker\TrackerLibrary\obj\Debug\netstandard2.0\TrackerLibrary.csproj.CoreCompileInputs.cache
 C:\Users\Marko\Desktop\CS\tournament\TournamentTracker\TrackerLibrary\obj\Debug\netstandard2.0\TrackerLibrary.dll
 C:\Users\Marko\Desktop\CS\tournament\TournamentTracker\TrackerLibrary\obj\Debug\netstandard2.0\TrackerLibrary.pdb
+C:\Users\Marko\Desktop\CS\tournament\TournamentTracker\TrackerLibrary\obj\Debug\netstandard2.0\TrackerLibrary.csproj.CoreCompileInputs.cache

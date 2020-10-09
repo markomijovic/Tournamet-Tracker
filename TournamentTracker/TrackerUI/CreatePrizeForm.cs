@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TrackerLibrary;
+using TrackerLibrary.Models;
 
 namespace TrackerUI
 {
@@ -27,12 +28,9 @@ namespace TrackerUI
         {
             if (ValidateForm())
             {
-                PrizeModel model = new PrizeModel(placeNameValue.Text, placeNumberValue.Text, 
+                PrizeModel model = new PrizeModel(placeNameValue.Text, placeNumberValue.Text,
                                                   prizeAmountValue.Text, prizePercentageValue.Text);
-                foreach (IDataConnection db in GlobalConfig.Connections)
-                {
-                    db.CreatePrize(model);
-                }
+                GlobalConfig.Connection.CreatePrize(model);
                 // Set to default values after submiting the prize form
                 placeNameValue.Text = "";
                 placeNumberValue.Text = "";
