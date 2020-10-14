@@ -4,12 +4,28 @@ using System.Text;
 using TrackerLibrary.Models;
 using TrackerLibrary.DataAccess.TextExtensions;
 using System.Linq;
+using System.Runtime.InteropServices;
 
 namespace TrackerLibrary
 {
     public class TextConnector : IDataConnection
     {
         private const string PrizesFile = "PrizeModels.csv";
+        private const string PeopleFile = "PersonModels.csv";
+        public PersonModel CreatePerson(PersonModel model)
+        {
+            int currentId = 1;
+            List<PersonModel> people = PeopleFile.FullFilePath().LoadFile().ConvertToPersonModels();
+            if (people.Count > 0)
+            {
+                currentId = people.OrderByDescending(x => x.Id).First().Id + 1;
+            }
+            model.Id = currentId++;
+            people.Add(model);
+            people.SaveToPersonFile(PeopleFile);
+            return model;
+        }
+
         /// <summary>
         /// Saves a new prize to the textfile
         /// </summary>
@@ -28,12 +44,6 @@ namespace TrackerLibrary
             // curentId++ in case we want to add another model after
             model.Id = currentId++;
             prizes.Add(model);
-            // done-Load the text file
-            // done-Convert the text to List<PrizeModel>
-            // Find the max ID
-            // Add the new record with the new ID (max + 1)
-            // Convert the prizes to list<string>
-            // Save the list<string> to the text file
             prizes.SaveToPrizeFile(PrizesFile);
             return model;
         }

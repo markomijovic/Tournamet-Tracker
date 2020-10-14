@@ -19,7 +19,7 @@ namespace TrackerUI
 
             // Initialize the database connections to .sql and .txt
             TrackerLibrary.GlobalConfig.InitializeConnections(TrackerLibrary.DatabaseType.txt);
-            Application.Run(new CreatePrizeForm());
+            Application.Run(new CreateTeamForm());
             // Application.Run(new TournamentDashboardForm());
         }
     }

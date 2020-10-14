@@ -8,9 +8,6 @@ using TrackerLibrary.Models;
 
 namespace TrackerLibrary.DataAccess.TextExtensions
 {   
-    /// <summary>
-    /// String extension methods
-    /// </summary>
     public static class TextExtensions
     {   
         /// <summary>
@@ -33,7 +30,7 @@ namespace TrackerLibrary.DataAccess.TextExtensions
         }
 
         /// <summary>
-        /// Returns a prize model based on the csv data for prizes
+        /// Returns list of prize models based on the prize csv data file
         /// </summary>
         /// <param name="lines">Lines of the csv data file</param>
         /// <returns></returns>
@@ -45,12 +42,39 @@ namespace TrackerLibrary.DataAccess.TextExtensions
             {   
                 // array of csv in each line
                 string[] cols = line.Split(',');
-                PrizeModel p = new PrizeModel();
-                p.Id = int.Parse(cols[0]);
-                p.PlaceNumber = int.Parse(cols[1]);
-                p.PlaceName = cols[2];
-                p.PrizeAmount = decimal.Parse(cols[3]);
-                p.PrizePercentage = double.Parse(cols[4]);
+                PrizeModel p = new PrizeModel
+                {
+                    Id = int.Parse(cols[0]),
+                    PlaceNumber = int.Parse(cols[1]),
+                    PlaceName = cols[2],
+                    PrizeAmount = decimal.Parse(cols[3]),
+                    PrizePercentage = double.Parse(cols[4])
+                };
+                output.Add(p);
+            }
+            return output;
+        }
+        /// <summary>
+        /// Returns list of person models based on the people csv data file
+        /// </summary>
+        /// <param name="lines">Lines of the csv data file</param>
+        /// <returns></returns>
+        public static List<PersonModel> ConvertToPersonModels (this List<string> lines)
+        {
+            List<PersonModel> output = new List<PersonModel>();
+
+            foreach (string line in lines)
+            {
+                // array of csv in each line
+                string[] cols = line.Split(',');
+                PersonModel p = new PersonModel
+                {
+                    Id = int.Parse(cols[0]),
+                    FirstName = cols[1],
+                    LastName = cols[2],
+                    EmailAddress = cols[3],
+                    PhoneNumber = cols[4]
+                };
                 output.Add(p);
             }
             return output;
@@ -67,6 +91,21 @@ namespace TrackerLibrary.DataAccess.TextExtensions
             foreach(PrizeModel p in models)
             {
                 lines.Add($"{ p.Id },{ p.PlaceNumber },{ p.PlaceName },{ p.PrizeAmount },{ p.PrizePercentage }");
+            }
+            File.WriteAllLines(fileName.FullFilePath(), lines);
+        }
+        /// <summary>
+        /// Extension method for a list of people models that saves a new person
+        /// to the csv prize data file
+        /// </summary>
+        /// <param name="models">The list of new person models we want to save</param>
+        /// <param name="fileName">The csv file name</param>
+        public static void SaveToPersonFile(this List<PersonModel> models, string fileName)
+        {
+            List<string> lines = new List<string>();
+            foreach (PersonModel p in models)
+            {
+                lines.Add($"{ p.Id },{ p.FirstName },{ p.LastName },{ p.EmailAddress },{ p.PhoneNumber }");
             }
             File.WriteAllLines(fileName.FullFilePath(), lines);
         }

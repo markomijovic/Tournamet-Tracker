@@ -9,6 +9,7 @@ namespace TrackerLibrary.Models
     /// </summary>
     public class PersonModel
     {
+        public int Id { get; set; }
         /// <summary>
         /// Person's first name
         /// </summary>
@@ -24,6 +25,6 @@ namespace TrackerLibrary.Models
         /// <summary>
         /// Person's cellphone number
         /// </summary>
-        public string CellphoneNumber { get; set; }
+        public string PhoneNumber { get; set; }
     }
 }

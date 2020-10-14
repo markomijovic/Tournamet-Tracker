@@ -35,15 +35,15 @@
             this.selectMemberLabel = new System.Windows.Forms.Label();
             this.addMemberButton = new System.Windows.Forms.Button();
             this.addNewMemberGroupBox = new System.Windows.Forms.GroupBox();
-            this.firstNameValue = new System.Windows.Forms.TextBox();
-            this.firstNameLabel = new System.Windows.Forms.Label();
-            this.lastNameValue = new System.Windows.Forms.TextBox();
-            this.lastNameLabel = new System.Windows.Forms.Label();
-            this.emailValue = new System.Windows.Forms.TextBox();
-            this.emailLabel = new System.Windows.Forms.Label();
             this.cellphoneValue = new System.Windows.Forms.TextBox();
             this.cellphoneLabel = new System.Windows.Forms.Label();
+            this.emailValue = new System.Windows.Forms.TextBox();
             this.createMemberValue = new System.Windows.Forms.Button();
+            this.emailLabel = new System.Windows.Forms.Label();
+            this.lastNameValue = new System.Windows.Forms.TextBox();
+            this.lastNameLabel = new System.Windows.Forms.Label();
+            this.firstNameValue = new System.Windows.Forms.TextBox();
+            this.firstNameLabel = new System.Windows.Forms.Label();
             this.teamMemberListBox = new System.Windows.Forms.ListBox();
             this.memberLabel = new System.Windows.Forms.Label();
             this.deleteMemberButton = new System.Windows.Forms.Button();
@@ -129,23 +129,53 @@
             this.addNewMemberGroupBox.TabStop = false;
             this.addNewMemberGroupBox.Text = "Add New Member";
             // 
-            // firstNameValue
+            // cellphoneValue
             // 
-            this.firstNameValue.Location = new System.Drawing.Point(169, 65);
-            this.firstNameValue.Name = "firstNameValue";
-            this.firstNameValue.Size = new System.Drawing.Size(292, 43);
-            this.firstNameValue.TabIndex = 23;
+            this.cellphoneValue.Location = new System.Drawing.Point(169, 255);
+            this.cellphoneValue.Name = "cellphoneValue";
+            this.cellphoneValue.Size = new System.Drawing.Size(292, 43);
+            this.cellphoneValue.TabIndex = 29;
             // 
-            // firstNameLabel
+            // cellphoneLabel
             // 
-            this.firstNameLabel.AutoSize = true;
-            this.firstNameLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.firstNameLabel.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.firstNameLabel.Location = new System.Drawing.Point(6, 65);
-            this.firstNameLabel.Name = "firstNameLabel";
-            this.firstNameLabel.Size = new System.Drawing.Size(160, 41);
-            this.firstNameLabel.TabIndex = 22;
-            this.firstNameLabel.Text = "First Name";
+            this.cellphoneLabel.AutoSize = true;
+            this.cellphoneLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cellphoneLabel.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.cellphoneLabel.Location = new System.Drawing.Point(6, 255);
+            this.cellphoneLabel.Name = "cellphoneLabel";
+            this.cellphoneLabel.Size = new System.Drawing.Size(171, 41);
+            this.cellphoneLabel.TabIndex = 28;
+            this.cellphoneLabel.Text = "Cellphone#";
+            // 
+            // emailValue
+            // 
+            this.emailValue.Location = new System.Drawing.Point(169, 191);
+            this.emailValue.Name = "emailValue";
+            this.emailValue.Size = new System.Drawing.Size(292, 43);
+            this.emailValue.TabIndex = 27;
+            // 
+            // createMemberValue
+            // 
+            this.createMemberValue.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.createMemberValue.ForeColor = System.Drawing.Color.Black;
+            this.createMemberValue.Location = new System.Drawing.Point(138, 312);
+            this.createMemberValue.Name = "createMemberValue";
+            this.createMemberValue.Size = new System.Drawing.Size(200, 53);
+            this.createMemberValue.TabIndex = 22;
+            this.createMemberValue.Text = "Create Member";
+            this.createMemberValue.UseVisualStyleBackColor = true;
+            this.createMemberValue.Click += new System.EventHandler(this.createMemberValue_Click);
+            // 
+            // emailLabel
+            // 
+            this.emailLabel.AutoSize = true;
+            this.emailLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emailLabel.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.emailLabel.Location = new System.Drawing.Point(6, 191);
+            this.emailLabel.Name = "emailLabel";
+            this.emailLabel.Size = new System.Drawing.Size(88, 41);
+            this.emailLabel.TabIndex = 26;
+            this.emailLabel.Text = "Email";
             // 
             // lastNameValue
             // 
@@ -165,52 +195,23 @@
             this.lastNameLabel.TabIndex = 24;
             this.lastNameLabel.Text = "Last Name";
             // 
-            // emailValue
+            // firstNameValue
             // 
-            this.emailValue.Location = new System.Drawing.Point(169, 191);
-            this.emailValue.Name = "emailValue";
-            this.emailValue.Size = new System.Drawing.Size(292, 43);
-            this.emailValue.TabIndex = 27;
+            this.firstNameValue.Location = new System.Drawing.Point(169, 65);
+            this.firstNameValue.Name = "firstNameValue";
+            this.firstNameValue.Size = new System.Drawing.Size(292, 43);
+            this.firstNameValue.TabIndex = 23;
             // 
-            // emailLabel
+            // firstNameLabel
             // 
-            this.emailLabel.AutoSize = true;
-            this.emailLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.emailLabel.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.emailLabel.Location = new System.Drawing.Point(6, 191);
-            this.emailLabel.Name = "emailLabel";
-            this.emailLabel.Size = new System.Drawing.Size(88, 41);
-            this.emailLabel.TabIndex = 26;
-            this.emailLabel.Text = "Email";
-            // 
-            // cellphoneValue
-            // 
-            this.cellphoneValue.Location = new System.Drawing.Point(169, 255);
-            this.cellphoneValue.Name = "cellphoneValue";
-            this.cellphoneValue.Size = new System.Drawing.Size(292, 43);
-            this.cellphoneValue.TabIndex = 29;
-            // 
-            // cellphoneLabel
-            // 
-            this.cellphoneLabel.AutoSize = true;
-            this.cellphoneLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cellphoneLabel.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.cellphoneLabel.Location = new System.Drawing.Point(6, 255);
-            this.cellphoneLabel.Name = "cellphoneLabel";
-            this.cellphoneLabel.Size = new System.Drawing.Size(171, 41);
-            this.cellphoneLabel.TabIndex = 28;
-            this.cellphoneLabel.Text = "Cellphone#";
-            // 
-            // createMemberValue
-            // 
-            this.createMemberValue.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.createMemberValue.ForeColor = System.Drawing.Color.Black;
-            this.createMemberValue.Location = new System.Drawing.Point(138, 312);
-            this.createMemberValue.Name = "createMemberValue";
-            this.createMemberValue.Size = new System.Drawing.Size(200, 53);
-            this.createMemberValue.TabIndex = 22;
-            this.createMemberValue.Text = "Create Member";
-            this.createMemberValue.UseVisualStyleBackColor = true;
+            this.firstNameLabel.AutoSize = true;
+            this.firstNameLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.firstNameLabel.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.firstNameLabel.Location = new System.Drawing.Point(6, 65);
+            this.firstNameLabel.Name = "firstNameLabel";
+            this.firstNameLabel.Size = new System.Drawing.Size(160, 41);
+            this.firstNameLabel.TabIndex = 22;
+            this.firstNameLabel.Text = "First Name";
             // 
             // teamMemberListBox
             // 
