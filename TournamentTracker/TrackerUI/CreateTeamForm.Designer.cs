@@ -47,7 +47,7 @@
             this.teamMemberListBox = new System.Windows.Forms.ListBox();
             this.memberLabel = new System.Windows.Forms.Label();
             this.deleteMemberButton = new System.Windows.Forms.Button();
-            this.createTournamentButton = new System.Windows.Forms.Button();
+            this.createTeamButton = new System.Windows.Forms.Button();
             this.addNewMemberGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -110,6 +110,7 @@
             this.addMemberButton.TabIndex = 20;
             this.addMemberButton.Text = "Add Member";
             this.addMemberButton.UseVisualStyleBackColor = true;
+            this.addMemberButton.Click += new System.EventHandler(this.addMemberButton_Click);
             // 
             // addNewMemberGroupBox
             // 
@@ -244,17 +245,18 @@
             this.deleteMemberButton.TabIndex = 25;
             this.deleteMemberButton.Text = "Delete";
             this.deleteMemberButton.UseVisualStyleBackColor = true;
+            this.deleteMemberButton.Click += new System.EventHandler(this.deleteMemberButton_Click);
             // 
-            // createTournamentButton
+            // createTeamButton
             // 
-            this.createTournamentButton.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.createTournamentButton.ForeColor = System.Drawing.Color.Black;
-            this.createTournamentButton.Location = new System.Drawing.Point(373, 776);
-            this.createTournamentButton.Name = "createTournamentButton";
-            this.createTournamentButton.Size = new System.Drawing.Size(373, 84);
-            this.createTournamentButton.TabIndex = 26;
-            this.createTournamentButton.Text = "Create Tournament";
-            this.createTournamentButton.UseVisualStyleBackColor = true;
+            this.createTeamButton.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.createTeamButton.ForeColor = System.Drawing.Color.Black;
+            this.createTeamButton.Location = new System.Drawing.Point(373, 776);
+            this.createTeamButton.Name = "createTeamButton";
+            this.createTeamButton.Size = new System.Drawing.Size(373, 84);
+            this.createTeamButton.TabIndex = 26;
+            this.createTeamButton.Text = "Create Team";
+            this.createTeamButton.UseVisualStyleBackColor = true;
             // 
             // CreateTeamForm
             // 
@@ -262,7 +264,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1085, 890);
-            this.Controls.Add(this.createTournamentButton);
+            this.Controls.Add(this.createTeamButton);
             this.Controls.Add(this.deleteMemberButton);
             this.Controls.Add(this.memberLabel);
             this.Controls.Add(this.teamMemberListBox);
@@ -306,6 +308,6 @@
         private System.Windows.Forms.ListBox teamMemberListBox;
         private System.Windows.Forms.Label memberLabel;
         private System.Windows.Forms.Button deleteMemberButton;
-        private System.Windows.Forms.Button createTournamentButton;
+        private System.Windows.Forms.Button createTeamButton;
     }
 }

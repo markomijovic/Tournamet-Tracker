@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using System.Text;
 using TrackerLibrary.Models;
 //@PlaceNumber int
@@ -13,6 +14,7 @@ namespace TrackerLibrary
 {
     public class SqlConnector : IDataConnection
     {
+        private const string dbName = "Tournaments";
         /// <summary>
         /// Saves a new person to the database
         /// </summary>
@@ -20,7 +22,7 @@ namespace TrackerLibrary
         /// <returns></returns>
         public PersonModel CreatePerson(PersonModel model)
         {
-            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CncString("Tournaments")))
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CncString(dbName)))
             {
                 var p = new DynamicParameters();
                 p.Add("@FirstName", model.FirstName);
@@ -33,7 +35,6 @@ namespace TrackerLibrary
                 return model;
             }
         }
-
         /// <summary>
         /// Saves a new prize to the database
         /// </summary>
@@ -41,7 +42,7 @@ namespace TrackerLibrary
         /// <returns>The prize information, including the unique id</returns>
         public PrizeModel CreatePrize(PrizeModel model)
         {
-            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CncString("Tournaments")))
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CncString(dbName)))
             {
                 var p = new DynamicParameters();
                 p.Add("@PlaceNumber", model.PlaceNumber);
@@ -53,6 +54,19 @@ namespace TrackerLibrary
                 model.Id = p.Get<int>("@id");
                 return model;
             }
+        }
+        /// <summary>
+        /// Returns a list of all people in the sql database
+        /// </summary>
+        /// <returns></returns>
+        public List<PersonModel> GetPerson_All()
+        {
+            List<PersonModel> output;
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CncString(dbName)))
+            {
+                output = connection.Query<PersonModel>("dbo.spPeople_GetAll").ToList();
+            }
+            return output;
         }
     }
 }
