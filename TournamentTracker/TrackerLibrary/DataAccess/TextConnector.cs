@@ -12,6 +12,7 @@ namespace TrackerLibrary
     {
         private const string PrizesFile = "PrizeModels.csv";
         private const string PeopleFile = "PersonModels.csv";
+        private const string TeamFile = "TeamModels.csv";
         public PersonModel CreatePerson(PersonModel model)
         {
             int currentId = 1;
@@ -45,6 +46,22 @@ namespace TrackerLibrary
             model.Id = currentId++;
             prizes.Add(model);
             prizes.SaveToPrizeFile(PrizesFile);
+            return model;
+        }
+
+        public TeamModel CreateTeam(TeamModel model)
+        {
+            List<TeamModel> teams = TeamFile.FullFilePath().LoadFile().ConvertToTeamModels(PeopleFile);
+            int currentId = 1;
+            // the id used for the new record
+            if (teams.Count > 0)
+            {
+                currentId = teams.OrderByDescending(x => x.Id).First().Id + 1;
+            }
+            // curentId++ in case we want to add another model after
+            model.Id = currentId++;
+            teams.Add(model);
+            teams.SaveToTeamFile(TeamFile);
             return model;
         }
 

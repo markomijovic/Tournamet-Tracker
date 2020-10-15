@@ -8,7 +8,8 @@ namespace TrackerLibrary.Models
     /// The team playing in a tournament
     /// </summary>
     public class TeamModel
-    {
+    {   
+        public int Id { get; set; }
         /// <summary>
         /// The list of people where each person 
         /// is a team member
