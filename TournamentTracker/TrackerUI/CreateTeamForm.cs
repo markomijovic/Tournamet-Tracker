@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,9 +17,11 @@ namespace TrackerUI
     {
         private List<PersonModel> availableTeamMembers = GlobalConfig.Connection.GetPerson_All();
         private List<PersonModel> selectedTeamMembers = new List<PersonModel>();
-        public CreateTeamForm()
+        private ITeamRequester callingForm;
+        public CreateTeamForm(ITeamRequester caller)
         {
             InitializeComponent();
+            callingForm = caller;
             //CreateSampleData();
             WireUpLists();
         }
@@ -75,7 +78,11 @@ namespace TrackerUI
         private void addMemberButton_Click(object sender, EventArgs e)
         {
             PersonModel p = (PersonModel) selectMemberDropdown.SelectedItem;
-
+            if (p == null)
+            {
+                MessageBox.Show("Please select a valid.");
+                return;
+            }
             availableTeamMembers.Remove(p);
             selectedTeamMembers.Add(p);
             WireUpLists();
@@ -101,6 +108,8 @@ namespace TrackerUI
             t.TeamName = teamNameValue.Text;
             t.TeamMembers = selectedTeamMembers;
             GlobalConfig.Connection.CreateTeam(t);
+            callingForm.TeamComplete(t);
+            this.Close();
         }
     }
 }

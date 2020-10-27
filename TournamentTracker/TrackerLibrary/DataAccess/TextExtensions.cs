@@ -102,6 +102,7 @@ namespace TrackerLibrary.DataAccess.TextExtensions
                 {
                     t.TeamMembers.Add(people.Where(x => x.Id == int.Parse(id)).FirstOrDefault());
                 }
+                output.Add(t);
             }
             return output;
         }
